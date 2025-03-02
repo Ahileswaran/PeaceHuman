@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peace Human - Mental Wellness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar a {
+            color: white;
+            margin-right: 15px;
+        }
+        .container {
+            flex: 1;
+        }
+        .form-container, .challenge-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg p-3">
+        <div class="container">
+            <a class="navbar-brand text-white" href="index.html">Peace Human</a>
+            <div class="ml-auto">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+                <a href="#">Join</a>
+                <a href="#">Get Help</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="container text-center">
+        <h2>Welcome to Peace Human</h2>
+        <p>Your journey to mental wellness starts here.</p>
+        <img src="mental_wellness_chart.jpg" alt="Mental Wellness Chart" class="img-fluid">
+    </section>
+    
+    <section class="container">
+        <div class="col-md-6 mx-auto form-container">
+            <h3 class="text-center">Participate in a Challenge</h3>
+            <form id="challengeForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="challenge" class="form-label">Select Your Challenge</label>
+                    <select class="form-control" id="challenge" name="challenge" required>
+                        <option value="anxiety.html">Anxiety</option>
+                        <option value="depression.html">Depression</option>
+                        <option value="financial_stress.html">Financial Stress</option>
+                        <option value="work_pressure.html">Work Pressure</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-primary w-100" onclick="redirectToChallenge()">Proceed</button>
+            </form>
+        </div>
+    </section>
+    
+    <section class="container challenge-container">
+        <h3>Track Your Progress</h3>
+        <ul>
+            <li>Step 1: Understanding the Challenge ✅</li>
+            <li>Step 2: Implementing Daily Coping Strategies ⏳</li>
+            <li>Step 3: Engaging with a Support Group ⏳</li>
+            <li>Step 4: Monitoring Your Mental Health Progress ⏳</li>
+        </ul>
+    </section>
+    
+    <section class="container challenge-container">
+        <h3>Collaborate & Get Support</h3>
+        <p>Join a chatroom or video call with others overcoming similar challenges.</p>
+        <button class="btn btn-success">Join Video Call</button>
+        <button class="btn btn-info">Chat with Peers</button>
+    </section>
+    
+    <footer class="footer">
+        <p>All Rights Reserved @2025</p>
+    </footer>
+
+    <script>
+        function redirectToChallenge() {
+            var selectedChallenge = document.getElementById("challenge").value;
+            window.location.href = selectedChallenge;
+        }
+    </script>
+</body>
+</html>

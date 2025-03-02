@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peace Human - Mental Wellness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar a {
+            color: white;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+        }
+        .section {
+            padding: 50px 0;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg p-3">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">Peace Human</a>
+            <div class="ml-auto">
+                <a class="me-3" href="#">Join</a>
+                <a href="#">Get Help</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="section text-center">
+        <div class="container">
+            <h2>Mental Wellness Challenge</h2>
+            <img src="img/img-1.png" alt="Mental Wellness Chart" class="img-fluid">
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container d-flex justify-content-center">
+            <div class="col-md-6 form-container">
+                <h3 class="text-center">Participate in a Challenge</h3>
+                <form id="challengeForm" action="/submit" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="challenge" class="form-label">Select Your Challenge</label>
+                        <select class="form-control" id="challenge" name="challenge" required>
+                            <option value="Anxiety">Anxiety</option>
+                            <option value="Depression">Depression</option>
+                            <option value="Financial Stress">Financial Stress</option>
+                            <option value="Work Pressure">Work Pressure</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Proceed</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section text-center">
+        <div class="container">
+            <img src="img/img-3.jpg" alt="Team Support" class="img-fluid">
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p>All Rights Reserved @2025</p>
+    </footer>
+</body>
+</html>
