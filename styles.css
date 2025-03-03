@@ -16,6 +16,76 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
 }
+
+/* Scroll Container */
+.scroll-container {
+    height: 100vh; /* Full viewport height */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
+}
+
+/* Scroll Sections */
+.scroll-section {
+    height: 100vh; /* Each section takes up the full viewport height */
+    scroll-snap-align: start; /* Snap sections to the top of the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+}
+
+/* Fullscreen Image */
+.fullscreen-image {
+    width: 100%;
+    height: 95vh;
+    object-fit: cover; /* Ensure the image covers the entire section */
+}
+
+/* Challenge Selection */
+.challenge-selection {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin-top: 20px;
+}
+
+
+
+
+/* Section 1: Fullscreen Image */
+.scroll-section.section-1 {
+    background-image: url('img/img-3.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+/* Section 2: Mental Wellness Challenge */
+.scroll-section.section-2 {
+    background-image: url('img/challenge-bg.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Section 3: Challenge Quiz */
+.scroll-section.section-3 {
+    background-image: url('img/quiz-bg.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Form Container */
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
 .section {
     padding: 50px 0;
 }
@@ -23,11 +93,10 @@ body {
     background-color: #f8f9fa;
     text-align: center;
     padding: 10px;
-    margin-top: auto;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    margin-top: auto; /* Push the footer to the bottom of the container */
 }
+
 .challenge-selection {
     position: relative;
     display: flex;
@@ -590,3 +659,4 @@ ul li::before {
 .btn-primary:hover {
     opacity: 0.9;
 }
+
