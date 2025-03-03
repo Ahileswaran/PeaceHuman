@@ -5,89 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peace Human - Mental Wellness</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .navbar {
-            background-color: #007bff;
-        }
-        .navbar a {
-            color: white;
-        }
-        .form-container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-        }
-        .section {
-            padding: 50px 0;
-        }
-        .footer {
-            background-color: #f8f9fa;
-            text-align: center;
-            padding: 10px;
-            margin-top: auto;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg p-3">
         <div class="container">
-            <a class="navbar-brand text-white" href="#">Peace Human</a>
+            <a class="navbar-brand text-white" href="../index.html">Peace Human</a>
             <div class="ml-auto">
-                <a class="me-3" href="#">Join</a>
-                <a href="#">Get Help</a>
+                <!-- Therapy Dropdown Menu -->
+                <div class="dropdown me-3">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Therapy
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="pages/individual-therapy.html">Individual Therapy</a></li>
+                        <li><a class="dropdown-item" href="pages/couples-therapy.html">Couples Therapy</a></li>
+                        <li><a class="dropdown-item" href="pages/teen-therapy.html">Teen Therapy</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Other Navigation Links -->
+                <a class="me-3 text-white" href="../articles.html">Articles</a>
+                <a class="me-3 text-white" href="../signup.html">Join</a>
+                <a class="text-white" href="#">Get Help</a>
             </div>
         </div>
     </nav>
+
+    <div class="container text-center">
+        <img src="img/img-3.jpg" alt="Mental Wellness" class="img-fluid">
+    </div>
+    
     
     <section class="section text-center">
         <div class="container">
             <h2>Mental Wellness Challenge</h2>
-            <img src="img/img-1.png" alt="Mental Wellness Chart" class="img-fluid">
-        </div>
-    </section>
-    
-    <section class="section">
-        <div class="container d-flex justify-content-center">
-            <div class="col-md-6 form-container">
-                <h3 class="text-center">Participate in a Challenge</h3>
-                <form id="challengeForm" action="/submit" method="POST">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="challenge" class="form-label">Select Your Challenge</label>
-                        <select class="form-control" id="challenge" name="challenge" required>
-                            <option value="Anxiety">Anxiety</option>
-                            <option value="Depression">Depression</option>
-                            <option value="Financial Stress">Financial Stress</option>
-                            <option value="Work Pressure">Work Pressure</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Proceed</button>
-                </form>
+            <div class="challenge-selection">
+                <div class="circle center-circle">Select Challenge</div>
+                <div class="circle" style="top: 0; left: 50%; transform: translateX(-50%);" onclick="selectChallenge('physical.html')">Physical</div>
+                <div class="circle" style="top: 20%; right: 20%;" onclick="selectChallenge('emotional.html')">Emotional</div>
+                <div class="circle" style="bottom: 20%; right: 20%;" onclick="selectChallenge('financial.html')">Financial</div>
+                <div class="circle" style="bottom: 0; left: 50%; transform: translateX(-50%);" onclick="selectChallenge('social.html')">Social</div>
+                <div class="circle" style="top: 20%; left: 20%;" onclick="selectChallenge('intellectual.html')">Intellectual</div>
+                <div class="circle" style="bottom: 20%; left: 20%;" onclick="selectChallenge('spiritual.html')">Spiritual</div>
             </div>
         </div>
     </section>
-    
-    <section class="section text-center">
+
+    <section class="section">
         <div class="container">
-            <img src="img/img-3.jpg" alt="Team Support" class="img-fluid">
+            <h2 class="text-center">Not Sure Which Challenge Fits You?</h2>
+            <p class="text-center">Take this quick quiz to identify your challenge.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8 form-container">
+                    <form id="challengeQuiz">
+                        <!-- Question 1 -->
+                        <div class="mb-3">
+                            <label for="question1" class="form-label">1. How often do you feel overwhelmed?</label>
+                            <select class="form-control" id="question1" required>
+                                <option value="1">Never</option>
+                                <option value="2">Rarely</option>
+                                <option value="3">Sometimes</option>
+                                <option value="4">Often</option>
+                                <option value="5">Always</option>
+                            </select>
+                        </div>
+    
+                        <!-- Question 2 -->
+                        <div class="mb-3">
+                            <label for="question2" class="form-label">2. Do you struggle with sleep?</label>
+                            <select class="form-control" id="question2" required>
+                                <option value="1">Never</option>
+                                <option value="2">Rarely</option>
+                                <option value="3">Sometimes</option>
+                                <option value="4">Often</option>
+                                <option value="5">Always</option>
+                            </select>
+                        </div>
+    
+                        <!-- Image Selection -->
+                        <div class="mb-3">
+                            <label class="form-label">3. Which image best represents your current emotional state?</label>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="img/calm-beach.jpg" alt="Calm Beach" class="img-fluid img-thumbnail" onclick="selectImage('calm')">
+                                </div>
+                                <div class="col-4">
+                                    <img src="img/stormy-sky.jpg" alt="Stormy Sky" class="img-fluid img-thumbnail" onclick="selectImage('stormy')">
+                                </div>
+                                <div class="col-4">
+                                    <img src="img/crowded-room.jpg" alt="Crowded Room" class="img-fluid img-thumbnail" onclick="selectImage('crowded')">
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary w-100">Identify My Challenge</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
-    
+
     <footer class="footer">
         <p>All Rights Reserved @2025</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"> </script>
 </body>
 </html>

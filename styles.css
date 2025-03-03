@@ -1,0 +1,592 @@
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.navbar {
+    background-color: #007bff;
+}
+.navbar a {
+    color: white;
+}
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+.section {
+    padding: 50px 0;
+}
+.footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.challenge-selection {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin-top: 20px;
+}
+.circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.circle:hover {
+    transform: scale(1.2);
+    background-color: #0056b3;
+}
+.center-circle {
+    width: 150px;
+    height: 150px;
+    background-color: #f4a261;
+    font-weight: bold;
+}
+
+.img-thumbnail {
+cursor: pointer;
+transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.img-thumbnail:hover {
+transform: scale(1.05);
+border-color: #007bff;
+}
+
+.img-thumbnail.selected {
+border: 2px solid #007bff;
+}
+:root {
+--primary-color: #FF9F1C; /* Orange */
+--secondary-color: #00B4D8; /* Teal */
+--background-color: #FFFFFF; /* White */
+--text-color: #2B2D42; /* Dark Gray */
+}
+
+body {
+background-color: var(--background-color);
+color: var(--text-color);
+font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+background-color: var(--primary-color);
+}
+
+.btn-primary {
+background-color: var(--secondary-color);
+border: none;
+}
+
+.circle {
+background-color: var(--primary-color);
+color: white;
+}
+
+.circle:hover {
+background-color: #FF7F00; /* Darker orange */
+}
+
+.center-circle {
+background-color: var(--secondary-color);
+}
+
+h1, h2, h3 {
+font-weight: 700;
+color: var(--text-color);
+}
+
+h1 {
+font-size: 2.5rem;
+}
+
+h2 {
+font-size: 2rem;
+}
+
+/* Signup Form */
+.signup {
+    padding: 50px 0;
+    background-color: var(--background-color);
+}
+
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    opacity: 0.9;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li::before {
+    content: "✔";
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.form-check-label a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.form-check-label a:hover {
+    text-decoration: underline;
+}
+
+/* Article */
+.articles {
+    padding: 50px 0;
+    background-color: var(--background-color);
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* Mediation */
+.meditation {
+    padding: 50px 0;
+    background-color: var(--background-color);
+}
+
+.meditation h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.meditation h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.meditation p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.meditation ul, .meditation ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.meditation ul li, .meditation ol li {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.meditation ul li::before {
+    content: "✔";
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.meditation ol li {
+    list-style-type: decimal;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.meditation img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.meditation img:hover {
+    transform: scale(1.05);
+}
+
+/* Drop down menu */
+.dropdown-menu {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    color: white;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+    content: "▼";
+    font-size: 0.8rem;
+}
+
+/* Thearpy */
+.couples-therapy {
+    padding: 50px 0;
+    background-color: var(--background-color);
+}
+
+.couples-therapy h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.couples-therapy .lead {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.couples-therapy img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.couples-therapy img:hover {
+    transform: scale(1.05);
+}
+
+.couples-therapy ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.couples-therapy ul li {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.couples-therapy ul li::before {
+    content: "✔";
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.teen-therapy {
+    padding: 50px 0;
+    background-color: var(--background-color);
+}
+
+.teen-therapy h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.teen-therapy .lead {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.teen-therapy img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.teen-therapy img:hover {
+    transform: scale(1.05);
+}
+
+.teen-therapy ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.teen-therapy ul li {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.teen-therapy ul li::before {
+    content: "✔";
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.individual-therapy {
+    padding: 50px 0;
+    background-color: var(--background-color);
+}
+
+.individual-therapy h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.individual-therapy .lead {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.individual-therapy img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.individual-therapy img:hover {
+    transform: scale(1.05);
+}
+
+.individual-therapy ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.individual-therapy ul li {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.individual-therapy ul li::before {
+    content: "✔";
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/*flow page */
+.question-container {
+    padding: 50px 0;
+    background-color: var(--background-color);
+}
+
+.progress {
+    height: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.question {
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+.question h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.question p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.btn-secondary:hover {
+    opacity: 0.9;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}

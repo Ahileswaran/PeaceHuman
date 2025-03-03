@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peace Human - Mental Wellness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg p-3">
+        <div class="container">
+            <a class="navbar-brand text-white" href="../index.html">Peace Human</a>
+            <div class="ml-auto">
+                <!-- Therapy Dropdown Menu -->
+                <div class="dropdown me-3">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Therapy
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="individual-therapy.html">Individual Therapy</a></li>
+                        <li><a class="dropdown-item" href="couples-therapy.html">Couples Therapy</a></li>
+                        <li><a class="dropdown-item" href="teen-therapy.html">Teen Therapy</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Other Navigation Links -->
+                <a class="me-3" href="../articles.html">Articles</a>
+                <a class="me-3" href="../signup.html">Join</a>
+                <a href="#">Get Help</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="question-container">
+        <div class="container">
+            <!-- Question Indicator Slider -->
+            <div class="progress mb-4">
+                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+    
+            <!-- Question Section -->
+            <div id="question-section">
+                <!-- Question 1 -->
+                <div class="question active" data-step="1">
+                    <h2>To begin, please select why you thought about getting help from a provider.</h2>
+                    <p>Select all that apply</p>
+                    <select class="form-select mb-3" multiple>
+                        <option value="stress">Stress</option>
+                        <option value="anxiety">Anxiety</option>
+                        <option value="depression">Depression</option>
+                        <option value="relationship-issues">Relationship Issues</option>
+                        <option value="self-esteem">Self-Esteem</option>
+                    </select>
+                </div>
+    
+                <!-- Question 2 -->
+                <div class="question" data-step="2">
+                    <h2>How often do you experience these challenges?</h2>
+                    <select class="form-select mb-3">
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="rarely">Rarely</option>
+                    </select>
+                </div>
+    
+                <!-- Question 3 -->
+                <div class="question" data-step="3">
+                    <h2>What is your primary goal for therapy?</h2>
+                    <select class="form-select mb-3">
+                        <option value="reduce-stress">Reduce Stress</option>
+                        <option value="improve-relationships">Improve Relationships</option>
+                        <option value="boost-confidence">Boost Confidence</option>
+                        <option value="manage-emotions">Manage Emotions</option>
+                    </select>
+                </div>
+            </div>
+    
+            <!-- Navigation Buttons -->
+            <div class="d-flex justify-content-between mt-4">
+                <button id="back-btn" class="btn btn-secondary" disabled>Back</button>
+                <button id="next-btn" class="btn btn-primary">Continue</button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <p>All Rights Reserved @2025</p>
+    </footer>
+
+    <script src="../script.js"> </script>
+    <script>
+        //flow page
+        document.addEventListener('DOMContentLoaded', function () {
+    let currentStep = 1;
+    const totalSteps = 3;
+
+    // Update progress bar
+    function updateProgress() {
+        const progress = (currentStep / totalSteps) * 100;
+        document.querySelector('.progress-bar').style.width = `${progress}%`;
+    }
+
+    // Show current question and hide others
+    function showQuestion(step) {
+        document.querySelectorAll('.question').forEach((question) => {
+            question.classList.remove('active');
+        });
+        document.querySelector(`.question[data-step="${step}"]`).classList.add('active');
+    }
+
+    // Handle Back button
+    document.getElementById('back-btn').addEventListener('click', () => {
+        if (currentStep > 1) {
+            currentStep--;
+            showQuestion(currentStep);
+            updateProgress();
+            document.getElementById('next-btn').textContent = 'Continue';
+            document.getElementById('back-btn').disabled = currentStep === 1;
+        }
+    });
+
+    // Handle Next button
+    document.getElementById('next-btn').addEventListener('click', () => {
+        if (currentStep < totalSteps) {
+            currentStep++;
+            showQuestion(currentStep);
+            updateProgress();
+            document.getElementById('back-btn').disabled = false;
+            if (currentStep === totalSteps) {
+                document.getElementById('next-btn').textContent = 'Submit';
+            }
+        } else {
+            // Submit the form
+            submitForm();
+        }
+    });
+
+    // Function to collect and submit form data
+    function submitForm() {
+        // Collect answers
+        const answers = {
+            reason: Array.from(document.querySelector('[data-step="1"] .form-select').selectedOptions).map(option => option.value),
+            frequency: document.querySelector('[data-step="2"] .form-select').value,
+            goal: document.querySelector('[data-step="3"] .form-select').value,
+        };
+
+        // Display confirmation (or send data to backend)
+        alert(`Form submitted!\n\nAnswers:\nReason: ${answers.reason.join(', ')}\nFrequency: ${answers.frequency}\nGoal: ${answers.goal}`);
+
+        // Optionally, redirect to a thank-you page or reset the form
+        window.location.href = '../signup.html';
+    }
+
+    // Initialize the first question
+    showQuestion(currentStep);
+    updateProgress();
+});
+    </script>
+</body>
+</html>
