@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peace Human - Mental Wellness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg p-3">
+        <div class="container">
+            <a class="navbar-brand text-white" href="../index.html">Peace Human</a>
+            <div class="ml-auto d-flex align-items-center">
+                <!-- Therapy Dropdown Menu -->
+                <div class="dropdown me-3">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Therapy
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="pages/individual-therapy.html">Individual Therapy</a></li>
+                        <li><a class="dropdown-item" href="pages/couples-therapy.html">Couples Therapy</a></li>
+                        <li><a class="dropdown-item" href="pages/teen-therapy.html">Teen Therapy</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Other Navigation Links -->
+                <a class="me-3 text-white" href="../articles.html">Articles</a>
+                <a class="me-3 text-white" href="../signup.html">Join</a>
+                
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">Overcoming Anxiety</h2>
+            <div class="row">
+                <!-- Guidance Section -->
+                <div class="col-md-8">
+                    <h3>Guidance</h3>
+                    <p>Here are some steps to help you manage anxiety:</p>
+                    <ul>
+                        <li>Practice deep breathing exercises.</li>
+                        <li>Engage in regular physical activity.</li>
+                        <li>Limit caffeine and alcohol intake.</li>
+                        <li>Practice mindfulness and meditation.</li>
+                        <li>Seek professional help if needed.</li>
+                    </ul>
+                </div>
+
+                <!-- Progress Tracking Section -->
+                <div class="col-md-4">
+                    <h3>Your Progress</h3>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                    </div>
+                    <h4>Next Steps</h4>
+                    <ul>
+                        <li><input type="checkbox" id="task1" onchange="updateProgress()"> Day 1: Practice mindfulness for 10 minutes.</li>
+                        <li><input type="checkbox" id="task2" onchange="updateProgress()"> Day 2: Write down your thoughts in a journal.</li>
+                        <li><input type="checkbox" id="task3" onchange="updateProgress()"> Day 3: Engage in 30 minutes of physical activity.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Collaboration Section -->
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <h3>Collaborate with Others</h3>
+                    <p>Connect with others who are also working on overcoming anxiety:</p>
+                    <button class="btn btn-primary" onclick="startVideoCall()">Start Video Call</button>
+                    <button class="btn btn-secondary" onclick="openChat()">Open Chat</button>
+                </div>
+            </div>
+
+            <!-- Community Forum Section -->
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <h3>Community Forum</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Share Your Experience</h5>
+                            <textarea class="form-control mb-3" placeholder="Write your post..."></textarea>
+                            <button class="btn btn-primary">Post</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>All Rights Reserved @2025</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"> </script>
+    <script>
+        // Function to update progress
+        function updateProgress() {
+            const tasks = document.querySelectorAll('input[type="checkbox"]');
+            let completedTasks = 0;
+            tasks.forEach(task => {
+                if (task.checked) completedTasks++;
+            });
+            const progress = (completedTasks / tasks.length) * 100;
+            document.querySelector('.progress-bar').style.width = `${progress}%`;
+            document.querySelector('.progress-bar').innerText = `${Math.round(progress)}%`;
+        }
+
+        // Placeholder functions for collaboration features
+        function startVideoCall() {
+            alert("Starting video call... (Integration with Twilio or WebRTC can be added here)");
+        }
+
+        function openChat() {
+            alert("Opening chat... (Integration with a chat API can be added here)");
+        }
+    </script>
+</body>
+</html>
