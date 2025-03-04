@@ -27,7 +27,7 @@ function recommendChallenge(answers, image) {
     }
 }
 
-// Handle form submission
+// Handle form submission for the challenge quiz
 document.getElementById('challengeQuiz').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -45,7 +45,12 @@ document.getElementById('challengeQuiz').addEventListener('submit', function (ev
     window.location.href = `../pages/${challenge}.html`;
 });
 
-//Signup form
+// Function to handle challenge selection (for Section 2)
+function selectChallenge(page) {
+    window.location.href = page;
+}
+
+// Handle signup form submission
 document.getElementById('signupForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -70,5 +75,3 @@ document.getElementById('signupForm').addEventListener('submit', function (event
     alert('Account created successfully!');
     // Redirect to another page or perform further actions
 });
-
-
