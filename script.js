@@ -1,51 +1,49 @@
-      // Function to handle image selection
-      let selectedImage = null;
+// Function to handle image selection
+let selectedImage = null;
 
-      function selectImage(image) {
-          selectedImage = image;
-          document.querySelectorAll('.img-thumbnail').forEach(img => img.classList.remove('selected'));
-          event.target.classList.add('selected');
-      }
-      
-      // Function to recommend a challenge
-      function recommendChallenge(answers, image) {
-          let challenge = 'Anxiety'; // Default challenge
-      
-          // Logic to determine the challenge
-          const totalScore = answers.reduce((sum, value) => sum + parseInt(value), 0);
-      
-          if (totalScore >= 15 || image === 'stormy') {
-              challenge = 'Anxiety';
-          } else if (totalScore >= 10 || image === 'crowded') {
-              challenge = 'Depression';
-          } else if (totalScore >= 5 || image === 'calm') {
-              challenge = 'Financial Stress';
-          }
-      
-          return challenge;
-      }
-      
-      // Handle form submission
-      document.getElementById('challengeQuiz').addEventListener('submit', function (event) {
-          event.preventDefault();
-      
-          // Get answers
-          const answers = [
-              document.getElementById('question1').value,
-              document.getElementById('question2').value,
-          ];
-      
-          // Recommend challenge
-          const challenge = recommendChallenge(answers, selectedImage);
-      
-          // Redirect to the recommended challenge page
-          window.location.href = `${challenge.toLowerCase().replace(' ', '-')}.html`;
-      });
-      
-              function selectChallenge(page) {
-                  window.location.href = page;
-              }
+function selectImage(image) {
+    selectedImage = image;
+    document.querySelectorAll('.img-thumbnail').forEach(img => img.classList.remove('selected'));
+    event.target.classList.add('selected');
+}
 
+// Function to recommend a challenge
+function recommendChallenge(answers, image) {
+    const totalScore = answers.reduce((sum, value) => sum + parseInt(value), 0);
+
+    // Logic to determine the challenge
+    if (totalScore >= 15 || image === 'stormy') {
+        return 'emotional'; // Emotional Challenge
+    } else if (totalScore >= 10 || image === 'crowded') {
+        return 'social'; // Social Challenge
+    } else if (totalScore >= 5 || image === 'calm') {
+        return 'physical'; // Physical Challenge
+    } else if (totalScore >= 3) {
+        return 'financial'; // Financial Challenge
+    } else if (totalScore >= 1) {
+        return 'intellectual'; // Intellectual Challenge
+    } else {
+        return 'spiritual'; // Spiritual Challenge
+    }
+}
+
+// Handle form submission
+document.getElementById('challengeQuiz').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Get answers
+    const answers = [
+        document.getElementById('question1').value,
+        document.getElementById('question2').value,
+        document.getElementById('question3').value,
+    ];
+
+    // Recommend challenge
+    const challenge = recommendChallenge(answers, selectedImage);
+
+    // Redirect to the recommended challenge page
+    window.location.href = `../pages/${challenge}.html`;
+});
 
 //Signup form
 document.getElementById('signupForm').addEventListener('submit', function (event) {

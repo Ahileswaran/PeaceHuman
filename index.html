@@ -61,61 +61,74 @@
         </div>
     </section>
 
-    <!-- Section 3: Challenge Quiz -->
-    <section class="scroll-section section-3">
-        <div class="container">
-            <h2 class="text-center">Not Sure Which Challenge Fits You?</h2>
-            <p class="text-center">Take this quick quiz to identify your challenge.</p>
-            <div class="row justify-content-center">
-                <div class="col-md-8 form-container">
-                    <form id="challengeQuiz">
-                        <!-- Question 1 -->
-                        <div class="mb-3">
-                            <label for="question1" class="form-label">1. How often do you feel overwhelmed?</label>
-                            <select class="form-control" id="question1" required>
-                                <option value="1">Never</option>
-                                <option value="2">Rarely</option>
-                                <option value="3">Sometimes</option>
-                                <option value="4">Often</option>
-                                <option value="5">Always</option>
-                            </select>
-                        </div>
-        
-                        <!-- Question 2 -->
-                        <div class="mb-3">
-                            <label for="question2" class="form-label">2. Do you struggle with sleep?</label>
-                            <select class="form-control" id="question2" required>
-                                <option value="1">Never</option>
-                                <option value="2">Rarely</option>
-                                <option value="3">Sometimes</option>
-                                <option value="4">Often</option>
-                                <option value="5">Always</option>
-                            </select>
-                        </div>
-        
-                        <!-- Image Selection -->
-                        <div class="mb-3">
-                            <label class="form-label">3. Which image best represents your current emotional state?</label>
-                            <div class="row">
-                                <div class="col-4">
-                                    <img src="img/calm-beach.png" alt="Calm Beach" class="img-fluid img-thumbnail" onclick="selectImage('calm')">
-                                </div>
-                                <div class="col-4">
-                                    <img src="img/stromy-sky.jpg" alt="Stormy Sky" class="img-fluid img-thumbnail" onclick="selectImage('stormy')">
-                                </div>
-                                <div class="col-4">
-                                    <img src="img/crowded-room.jpeg" alt="Crowded Room" class="img-fluid img-thumbnail" onclick="selectImage('crowded')">
-                                </div>
+   <!-- Section 3: Challenge Quiz -->
+<section class="scroll-section section-3">
+    <div class="container">
+        <h2 class="text-center">Not Sure Which Challenge Fits You?</h2>
+        <p class="text-center">Take this quick quiz to identify your challenge.</p>
+        <div class="row justify-content-center">
+            <div class="col-md-8 form-container">
+                <form id="challengeQuiz">
+                    <!-- Question 1 -->
+                    <div class="mb-3">
+                        <label for="question1" class="form-label">1. How often do you feel overwhelmed?</label>
+                        <select class="form-control" id="question1" required>
+                            <option value="1">Never</option>
+                            <option value="2">Rarely</option>
+                            <option value="3">Sometimes</option>
+                            <option value="4">Often</option>
+                            <option value="5">Always</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="mb-3">
+                        <label for="question2" class="form-label">2. Do you struggle with sleep?</label>
+                        <select class="form-control" id="question2" required>
+                            <option value="1">Never</option>
+                            <option value="2">Rarely</option>
+                            <option value="3">Sometimes</option>
+                            <option value="4">Often</option>
+                            <option value="5">Always</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="mb-3">
+                        <label for="question3" class="form-label">3. How would you describe your energy levels?</label>
+                        <select class="form-control" id="question3" required>
+                            <option value="1">Always high</option>
+                            <option value="2">Usually high</option>
+                            <option value="3">Moderate</option>
+                            <option value="4">Usually low</option>
+                            <option value="5">Always low</option>
+                        </select>
+                    </div>
+
+                    <!-- Image Selection -->
+                    <div class="mb-3">
+                        <label class="form-label">4. Which image best represents your current emotional state?</label>
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="img/calm-beach.png" alt="Calm Beach" class="img-fluid img-thumbnail" onclick="selectImage('calm')">
+                            </div>
+                            <div class="col-4">
+                                <img src="img/stromy-sky.jpg" alt="Stormy Sky" class="img-fluid img-thumbnail" onclick="selectImage('stormy')">
+                            </div>
+                            <div class="col-4">
+                                <img src="img/crowded-room.jpeg" alt="Crowded Room" class="img-fluid img-thumbnail" onclick="selectImage('crowded')">
                             </div>
                         </div>
-        
-                        <!-- Submit Button -->
-                        <button type="submit" class="btn btn-primary w-100">Identify My Challenge</button>
-                    </form>
-                </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary w-100">Identify My Challenge</button>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 </div>
 
     <footer class="footer">
